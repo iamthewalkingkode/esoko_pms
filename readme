@@ -2,7 +2,7 @@ Start Time: 13:00
 Finish Time: 15:00
 
 Technologies:
-    nodeJs:
+    nodeJs
     mongoDb: mongoDb has to installed and running on the localhost. The database is: `esoko_pms`
 
 
