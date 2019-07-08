@@ -1,0 +1,35 @@
+Start Time: 13:00
+Finish Time: 15:00
+
+Technologies:
+    nodeJs:
+    mongoDb: mongoDb has to installed and running on the localhost. The database is: `esoko_pms`
+
+
+By: The Walking Kode
+Base URL: http://localhost:8000/
+
+All requests to this api are of a POST method.
+All payloads must be submitted as JSON objets.
+
+
+# Authentication: allows you to login or register a new user
+    - /auth : to login. payload => { "username":"", "password":"" }. Returns the json data of the User and the token (jwt) used for Authorization for the rest of the endpoints
+    - /auth/register : payload => { "username":"", "password":"", "password2":"" }
+
+
+# Groups: to retrieve, create and update Groups
+    - /groups : to retrieve all groups in the DB
+    - /groups/save : to save a new group. Example payload => { "name":"" }
+    - /groups/update : to edit a group. Example payload => { "id":"", "name":"" } where `id` is the `_id` of the particular group
+
+# People: to retrieve, create, update and delete People
+    - /people : to retrieve all people in the DB
+    - /people/save : to save a new people. Example payload => { "first_name":"", "last_name":"" etc... }
+    - /people/update : to edit a people. Example payload => { "id":"", "first_name":"", "last_name":"" etc... } where `id` is the `_id` of the particular people
+    - /people/delete : to delete a people. Example payload => { "id":"" } where `id` is the `_id` of the particular people
+
+
+# People_Group: to assign people to groups
+    - /people_group: to retrieve all assignments
+    - /people_group/assign: to assign people to groups. Example payload => { "people":"", "group":"" }
