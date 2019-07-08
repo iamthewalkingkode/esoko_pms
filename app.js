@@ -9,6 +9,7 @@ const authRoutes = require('./routes/auth.route');
 const peopleRoutes = require('./routes/people.route');
 const groupsRoutes = require('./routes/groups.route');
 const peopleGroupsRoutes = require('./routes/people_groups.route');
+const searchRoutes = require('./routes/search.route');
 
 
 const app = express();
@@ -37,6 +38,7 @@ app.use('/auth', authRoutes);
 app.use('/people', peopleRoutes);
 app.use('/groups', groupsRoutes);
 app.use('/people_groups', peopleGroupsRoutes);
+app.use('/search', searchRoutes);
 
 
 // Default error handlers

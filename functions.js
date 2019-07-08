@@ -23,7 +23,7 @@ module.exports.res = function (status, result, error = {}) {
         status: status,
         result: result
     };
-    if (error.name) {
+    if (error !== null && error.hasOwnProperty('name') === true) {
         res = this.mergeObj(res, {
             error: {
                 name: error.name,
@@ -49,7 +49,8 @@ module.exports.like = function (data, fields = []) {
     for (var f = 0; f < fields.length; f++) {
         let key = fields[f];
         if (data.hasOwnProperty(key) === true) {
-            regexps[key] = new RegExp(data[key], 'i');
+            // regexps[key] = new RegExp(data[key], 'i');
+            regexps[key] = data[key];
         }
     }
     return regexps;
@@ -71,4 +72,25 @@ module.exports.strongPWD = function (password) {
 module.exports.calcAge = function (dateString) {
     var birthday = +new Date(dateString);
     return ~~((Date.now() - birthday) / (31557600000));
+}
+
+
+module.exports.people = function (doc) {
+    return {
+        _id: doc._id,
+        first_name: doc.first_name,
+        last_name: doc.last_name,
+        full_name: doc.first_name + ' ' + doc.last_name,
+        email: doc.email,
+        phone_no: doc.phone_no,
+        gender: doc.gender,
+        date_of_birth: doc.date_of_birth,
+        age: this.calcAge(doc.date_of_birth),
+        profile_pic: doc.profile_pic,
+        country: doc.country,
+        address: doc.address,
+        occupation: doc.occupation,
+        hobbies: doc.hobbies,
+        comments: doc.comments
+    };
 }

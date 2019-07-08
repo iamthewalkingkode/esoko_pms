@@ -26,10 +26,14 @@ All payloads must be submitted as JSON objets.
 # People: to retrieve, create, update and delete People
     - /people : to retrieve all people in the DB
     - /people/save : to save a new people. Example payload => { "first_name":"", "last_name":"" etc... }
-    - /people/update : to edit a people. Example payload => { "id":"", "first_name":"", "last_name":"" etc... } where `id` is the `_id` of the particular people
+    - /people/update : to edit a people. Example payload => { "id":"", "first_name":"", "last_name":"" etc... } where `id` is the `_id` of the particular people. The endpoint can only update parsed params
     - /people/delete : to delete a people. Example payload => { "id":"" } where `id` is the `_id` of the particular people
 
 
 # People_Group: to assign people to groups
     - /people_group: to retrieve all assignments
     - /people_group/assign: to assign people to groups. Example payload => { "people":"", "group":"" }
+
+
+# Search: to Search on the PMS database
+    - /search: Search can be executed by `first_name` and `email`. { "phone_no":"", "email":"" }

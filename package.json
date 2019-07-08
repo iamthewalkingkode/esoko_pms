@@ -1,7 +1,7 @@
 {
   "name": "esoko_pms",
   "version": "1.0.0",
-  "description": "The esoko PMS allows Organizations to manange people.",
+  "description": "The esoko PMS allows Organizations to manange people. (Interview Test)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
