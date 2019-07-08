@@ -5,7 +5,10 @@ Technologies:
     nodeJs
     mongoDb: mongoDb has to installed and running on the localhost. The database is: `esoko_pms`
 
-To Start API: run thew following command: npm start
+
+To Start API:
+    1. run npm install
+    3. run start
 
 
 By: The Walking Kode
