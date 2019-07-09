@@ -36,8 +36,8 @@ All payloads must be submitted as JSON objets.
 
 
 # People_Group: to assign people to groups
-    - /people_group: to retrieve all assignments
-    - /people_group/assign: to assign people to groups. Example payload => { "people":"", "group":"" }
+    - /people_groups: to retrieve all assignments
+    - /people_groups/assign: to assign people to groups. Example payload => { "people":"", "group":"" }
 
 
 # Search: to Search on the PMS database
