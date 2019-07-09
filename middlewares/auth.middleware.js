@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
         }else{
             req.logg = {};
             return res.json({
-                status: 100,
+                status: 300,
                 result: 'Authentication failed...'
             });
         }
